@@ -39,10 +39,12 @@ NHCE <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?q
 COD <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from COD"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDBF15DV.usuniversi01134.oraclecloud.internal', USER='cs329e_riw223', PASS='orcl_riw223', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE), ))
 
 #Changes I made today
-df <- COD %>% select(STATE,YEAR,DEATHS,AADR,CAUSE_NAME) %>% filter(YEAR == 1999 & CAUSE_NAME == "Cancer")
+df1 <- COD %>% select(STATE,YEAR,DEATHS,AADR,CAUSE_NAME) %>% filter(YEAR == 1999 & CAUSE_NAME == "Cancer")
 
-df1 <- NHCE %>% select(ITEM,STATE_NAME,Y1999,CODE,COUNTRYGROUP) %>% filter(CODE == 2,COUNTRYGROUP != "Region") %>% rename(STATE = STATE_NAME,SPENDING = Y1999)
+df2 <- NHCE %>% select(ITEM,STATE_NAME,Y1999,CODE,COUNTRYGROUP) %>% filter(CODE == 2,COUNTRYGROUP != "Region") %>% rename(STATE = STATE_NAME,SPENDING = Y1999)
 
 NHCE %>% filter(COUNTRYGROUP != "Region") %>% rename(STATE = STATE_NAME,Y1999 = 1999) %>% dplyr::left_join(.,COD, by = "STATE") %>% View
 
-dplyr::left_join(df,df1,by = "STATE") %>% View
+df <- dplyr::left_join(df1,df2,by = "STATE")
+  
+ggplot() + coord_cartesian() + scale_x_discrete() + scale_y_continuous() + labs(title = "Cancer/Hospital Care",x= "STATE",y = "spending") + layer(data = df,mapping = aes(x = STATE,y = SPENDING/DEATHS), stat = "identity", geom = "bar")
