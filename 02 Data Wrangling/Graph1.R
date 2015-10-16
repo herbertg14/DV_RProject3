@@ -1,5 +1,3 @@
-NHCE %>% filter(COUNTRYGROUP != "Region") %>% rename(STATE = STATE_NAME, Y1999 = 1999) %>% dplyr::left_join(.,COD, by = "STATE") %>% View
-
 df1 <- COD %>% select(STATE,YEAR,DEATHS,AADR,CAUSE_NAME) %>% filter(YEAR == 1999 & CAUSE_NAME == "Cancer")
 
 df2 <- NHCE %>% select(ITEM,STATE_NAME,Y1999,CODE,COUNTRYGROUP) %>% filter(CODE == 2,COUNTRYGROUP != "Region") %>% rename(STATE = STATE_NAME,SPENDING = Y1999)
