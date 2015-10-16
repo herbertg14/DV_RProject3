@@ -8,7 +8,7 @@ ggplot() +
   coord_cartesian() +
   scale_x_continuous() + 
   scale_y_continuous() + 
-  labs(title = "Prescription Drug Spending vs. Number of Deaths") +
+  labs(title = "Prescription Drug Spending vs. Deaths by Suicide") +
   labs(x= "Spending (Millions of Dollars)",y = "Number of Deaths") +
   theme_gray() +
   theme(plot.title=element_text(size=20, face="bold", vjust=2)) +

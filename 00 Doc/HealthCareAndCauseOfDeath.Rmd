@@ -17,40 +17,45 @@ sessionInfo()
 
 
 ##Loading our data from the Oracle Database
+####Dataset 1: NHCE (FULL NAME)
 We modified the R script given to us to create a SQL code that would create the table in the Oracle Database.  We then loaded our data and could connect to the database to create our data frame in RStudio.
 ```{r}
-source("../02 Data Wrangling/Project3_ETL.R", echo = TRUE)
+source("../02 Data Wrangling/Project3_ETL_Data1.R", echo = TRUE)
 ```
 
 
+####Dataset 2: COD (FULL NAME)
+```{r}
+source("../02 Data Wrangling/Project3_ETL_Data2.R", echo = TRUE)
+```
 
 
-##Graph 1: 
+##Graph 1: INSERT TITLE HERE
 ```{r}
 source("../02 Data Wrangling/Graph1.R", echo = TRUE)
 ```
 
 ####Interpretation
-This Graph shows 
+This Graph shows............... 
  
   
   
   
-##Graph 2:
+##Graph 2: INSERT TITLE HERE
 ```{r}
 source("../02 Data Wrangling/Graph2.R", echo = TRUE)
 ```
 
 ####Interpretation
-This graph visualizes 
+This graph visualizes.............. 
   
  
   
   
-##Graph 3:
+##Graph 3: Suicide rates and prescription drugs grouped by state
 ```{r}
 source("../02 Data Wrangling/Graph3.R", echo = TRUE)
 ```
 
 ####Interpretation
-This graphs  
+This graphs shows the relationship of prescription drug spending (by millions of dollars) for each state and the number of suicide deaths for each state. As you can see by the scatterplot, there is a positive correlation between suicide and the amount of prescription drug available according to the spending. We can therefore conclude that as more people in a population buy prescription drugs there is an increase in the suicide rates most likely due to the availability of such hard drugs.  
