@@ -1,20 +1,56 @@
 ---
-title: "HealthCareandCauseofDeath"
+title: "HealthCareAndCauseOfDeath.Rmd"
+author: "Herbert Gutierrez, Ryan Wechter"
+date: " October 16, 2015"
 output: html_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+##Health Care Spending and Causes of Death by State
+###CS329E: Project 3
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+
+####RStudio Configuration:
 ```{r}
-summary(cars)
+sessionInfo()
 ```
 
-You can also embed plots, for example:
 
-```{r, echo=FALSE}
-plot(cars)
+##Loading our data from the Oracle Database
+We modified the R script given to us to create a SQL code that would create the table in the Oracle Database.  We then loaded our data and could connect to the database to create our data frame in RStudio.
+```{r}
+source("../02 Data Wrangling/Project3_ETL.R", echo = TRUE)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+##Graph 1: 
+```{r}
+source("../02 Data Wrangling/Graph1.R", echo = TRUE)
+```
+
+####Interpretation
+This Graph shows 
+ 
+  
+  
+  
+##Graph 2:
+```{r}
+source("../02 Data Wrangling/Graph2.R", echo = TRUE)
+```
+
+####Interpretation
+This graph visualizes 
+  
+ 
+  
+  
+##Graph 3:
+```{r}
+source("../02 Data Wrangling/Graph3.R", echo = TRUE)
+```
+
+####Interpretation
+This graphs  
