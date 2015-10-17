@@ -1,6 +1,6 @@
 ---
 title: "HealthCareAndCauseOfDeath.Rmd"
-author: "Herbert Gutierrez, Ryan Wechter"
+author: "Herbert Gutierrez, Ryan Wechter, Varun Parameswaran"
 date: " October 16, 2015"
 output: html_document
 ---
@@ -8,6 +8,8 @@ output: html_document
 ##Health Care Spending and Causes of Death by State
 ###CS329E: Project 3
 
+###Introduction
+This is Project 3 for Dr. Cannata's Data Visualization class. In this project, we worked with two datasets: national healthcare expenditures and causes of death. Correlating the two would help determine the effectiveness of hospitals and how the statistics in these two tables vary by state and region.
 
 
 ####RStudio Configuration:
@@ -16,49 +18,37 @@ sessionInfo()
 ```
 
 
-##Loading our data from the Oracle Database
-####Dataset 1: NHCE (FULL NAME)
+###Loading our data from the Oracle Database
+####Dataset 1: National Healthcare Expenditures
 We modified the R script given to us to create a SQL code that would create the table in the Oracle Database.  We then loaded our data and could connect to the database to create our data frame in RStudio.
 ```{r}
 source("../02 Data Wrangling/Project3_ETL_Data1.R", echo = TRUE)
 ```
 
 
-####Dataset 2: COD (FULL NAME)
+####Dataset 2: Cause of Death
 ```{r}
 source("../02 Data Wrangling/Project3_ETL_Data2.R", echo = TRUE)
 ```
 
 
-##Graph 1: INSERT TITLE HERE
+##Graph 1: Hospital Spending per Cancer Death, by state
 ```{r}
 source("../02 Data Wrangling/Graph1.R", echo = TRUE)
 ```
 
 ####Interpretation
-<<<<<<< HEAD
-This Graph shows............... 
- 
-  
-=======
 This graph shows the ratio of the total number of dollars (1000's) spent by hospitals in each state to the number of cancer deaths in the state for the year 1999.  This ratio does not represent the average cost of a cancer patient to a hospital because the data excludes other types of death and does not account for other hospital expenses.  This graph is meant to illustrate the excessive over charging of patients for hospital care in the United States.  According to Beckers Hospital Review the average cost to a patient for a hospital stay in the United States is approximately $10,000 as compared to the cost to the hospital which ranges from as low as $500 in Florida to as high as $2000 in the District of Columbia.
->>>>>>> 1919d55c6a384041a5c585c9c2ef051a8449c6d5
+
   
-  
-##Graph 2: INSERT TITLE HERE
+##Graph 2: Healthcare Expenditures per Death in Texas
 ```{r}
 source("../02 Data Wrangling/Graph2.R", echo = TRUE)
 ```
 
 ####Interpretation
-<<<<<<< HEAD
-This graph visualizes.............. 
-  
- 
-=======
-This graph shows the rising cost of healthcare in the state of Texas from 1999-2009.
->>>>>>> 1919d55c6a384041a5c585c9c2ef051a8449c6d5
-  
+
+This graph shows the rising cost of healthcare in the state of Texas from 1999-2009. The rise is approximately linear; however, it shows signs of slowing down starting in 2006. Even taking inflation into account, this rise is alarming. It would be interesting to see how this graph has changed with Obamacare in the past few years.
   
 ##Graph 3: Suicide rates and prescription drugs grouped by state
 ```{r}
